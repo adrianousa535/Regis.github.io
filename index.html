@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Blog SSI Adrina Jarza ISI2</title>
+    <link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div class="naglowek">
+            <a class="logo" href="index.html" accesskey="1">
+                <span class="logo_obraz">
+                    <img src="image\logo.png" alt="https://konachan.com/post/show/301428" width="150" height="150">
+                </span>
+            </a>
+            <div class="nawigator">
+                Mój pierwszy blog
+            </div>
+        </div>
+
+    </header>
+
+    <div id="calosc">
+        <div id="kontener1">
+            <div id="lewy_panel">
+                <ul id="menu">
+                    <li id="strona_glowna"><a href="index.html">Strona główna</a></li>
+                    <li id="archiwum"><a href="index.html">Archiwum</a></li>
+                    <li id="kategorie"><a href="index.html">Kategorie</a></li>
+                    <li id="admin_panel"><a href="index.html">Panel administracyjny</a></li>
+                </ul>
+            </div>
+            <div id="czat">
+                <div id="akcje">
+                    <button type="button">Nowy post</button>
+                    <button type="button">Usuń post</button>
+                    <button type="button">Salto w tył</button>
+                </div>
+
+                <?php include 'wczytaj_post.php';?>
+
+                <?php include 'sprawdz_form.php';?>
+
+                <div class="komentarz">
+                    <form action="" method="POST">
+                        <div class="formularz">
+                            Nick: <input type="text" id="nickname" name="nickname">
+                            <?php print $empty_nickname; ?>
+                        </div>
+                        <div class="formularz">
+                            Email: <input type="text" id="email" name="email">
+                            <?php print $empty_email; ?>
+                            <?php print $no_match_email; ?>
+                        </div>
+                        <div class="formularz">
+                            Komentarz: <br> 
+                            <textarea id="komentarz" name="komentarz"></textarea><br>
+                            <?php print $empty_komentarz; ?>
+                        </div>
+                        <div class="formularz">
+                            <input type="submit" name=submit value="Dodaj Komentarz">
+                        </div>
+                    </form>
+                </div>
+            <div class="strony">
+                <?php include 'lista_stron.php';?>
+            </div>
+            </div>
+            <div id="prawy_panel">
+                <div class="youtube">
+                    <iframe src="https://www.youtube-nocookie.com/embed/cieL9wFReIw"
+                        title="Gość Radia ZET - Sławomir Mentzen" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="youtube">
+                    <iframe src="https://www.youtube-nocookie.com/embed/bP1EL9kezIU" title="Brevis - Bad Boys"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <b>Adrian Jarza</b><br>
+        III rok ISI2<br>
+        <a href="mailto: zireon@interia.pl">zireon@interia.pl</a><br>
+        <a href="mailto: adrian.jarza@o365.us.edu.pl">adrian.jarza@o365.us.edu.pl</a>
+    </footer>
+</body>
+
+
+</html>
