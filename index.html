@@ -3,20 +3,22 @@
 
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-249592587-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-249592587-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'UA-249592587-1');
-</script>
+        gtag('config', 'UA-249592587-1');
+    </script>
 
+    <script type="text/javascript" src="login_validation.js"></script>
 
     <meta charset="utf-8" />
     <title>Blog SSI Adrina Jarza ISI2</title>
     <link rel="stylesheet" href="main.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 </head>
 
 <body>
@@ -56,7 +58,7 @@
                 <?php include 'sprawdz_form.php';?>
 
                 <div class="komentarz">
-                    <form action="" method="POST">
+                    <form id="komentarz" action="" method="POST">
                         <div class="formularz">
                             Nick: <input type="text" id="nickname" name="nickname">
                             <?php print $empty_nickname; ?>
@@ -67,20 +69,42 @@
                             <?php print $no_match_email; ?>
                         </div>
                         <div class="formularz">
-                            Komentarz: <br> 
+                            Komentarz: <br>
                             <textarea id="komentarz" name="komentarz"></textarea><br>
                             <?php print $empty_komentarz; ?>
                         </div>
                         <div class="formularz">
-                            <input type="submit" name=submit value="Dodaj Komentarz">
+                            <input type="submit" name="DodajKom" value="Dodaj Komentarz">
                         </div>
                     </form>
                 </div>
-            <div class="strony">
-                <?php include 'lista_stron.php';?>
-            </div>
+                <div class="strony">
+                    <?php include 'lista_stron.php';?>
+                </div>
             </div>
             <div id="prawy_panel">
+                <div class="login_class">
+                    <form id="login_form" name="login_form" action="\Adrian\captcha\captcha.php"
+                        onsubmit="return validateForm();" method="POST">
+                        <!--Div do alertów dot. złego hasła-->
+                        <div id="alert" class="formularz"></div>
+                        <div class="formularz">
+                            Nazwa użytkownika: <br>
+                            <input type="text" id="login" name="login">
+                        </div>
+                        <div class="formularz">
+                            Hasło: <br>
+                            <input type="password" id="password" name="password" />
+                            <i class="bi bi-eye-slash" id="togglePassword"></i>
+                            <script type="text/javascript" src="toggle_password.js"></script>
+                        </div>
+                        <div class="formularz">
+                            <input type="submit" name="Zaloguj" value="Zaloguj">
+                            <a class="alt_login_buttons" href="index.html">Zapomniałem hasło</a>
+                            <a class="alt_login_buttons" href="index.html">Rejestracja</a>
+                        </div>
+                    </form>
+                </div>
                 <div class="youtube">
                     <iframe src="https://www.youtube-nocookie.com/embed/cieL9wFReIw"
                         title="Gość Radia ZET - Sławomir Mentzen" frameborder="0"

@@ -1,7 +1,5 @@
 <?php
 
-
-
 $articles = [
     [
         "tytul" => "De Mono - Póki na to czas",

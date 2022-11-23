@@ -1,3 +1,12 @@
+/*Var*/
+:root {
+    --div_border_rad: 25px;
+    /*div*/
+    --a_border_rad: 5px;
+    /*a href*/
+}
+
+/*Styles*/
 body {
     background-color: black;
     color: azure;
@@ -14,6 +23,7 @@ header {
 }
 
 div {
+    border-radius: var(--div_border_rad);
     border: 1px solid rgb(102, 10, 145);
 }
 
@@ -54,7 +64,7 @@ div {
     min-width: 450px;
 }
 
-.youtube{
+.youtube {
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 10px;
@@ -64,7 +74,8 @@ div {
 }
 
 #prawy_panel iframe {
-    margin-bottom: 5px; 
+    border-radius: var(--div_border_rad);
+    margin-bottom: 5px;
     width: 450px;
     height: 275px;
 }
@@ -84,7 +95,7 @@ a {
     text-decoration: none;
 }
 
-#panel a:link,
+#lewy_panel a:link,
 a:visited {
     color: white;
     padding: 5px 5px;
@@ -92,19 +103,25 @@ a:visited {
     display: inline-block;
 }
 
-#panel a:hover,
+#lewy_panel a:hover,
 a:active {
     color: darkkhaki;
 }
 
-a:link,
+.login_class a:link,
 a:visited {
+
+    border-radius: var(--a_border_rad);
+    border: 1px solid gray;
+    background-color: rgb(35, 34, 34);
     color: white;
     text-decoration: none;
     display: inline-block;
+    margin: 5px;
+    padding: 1px;
 }
 
-a:hover,
+.login_class a:hover,
 a:active {
     color: darkkhaki;
 }
@@ -147,10 +164,8 @@ a:active {
     font-weight: bold;
 }
 
-.tresc {
-    text-align: left;
-    font-style: normal;
-    font-size: medium;
+textarea{
+    max-width: 90%;
 }
 
 #akcje button {
@@ -164,7 +179,7 @@ a:active {
     font-size: 13px;
 }
 
-.komentarz{
+.komentarz {
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 10px;
@@ -176,15 +191,51 @@ a:active {
     font-weight: 400;
     font-size: 14px;
 }
+
 .form-control.error {
     border-color: red;
     padding: .375rem .75rem;
 }
 
-.strony{
+.strony {
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
+}
+
+.formularz {
+    border: none;
+}
+
+.login_class {
+    text-align: center;
+    margin: 5px;
+}
+
+#login_form input[type=submit] {
+    font-size: 14px;
+    border-radius: var(--a_border_rad);
+    border: 1px solid gray;
+    background-color: rgb(35, 34, 34);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px;
+}
+
+#alert {
+    display: none;
+}
+
+#togglePassword {
+    position: absolute;
+    cursor: pointer;
+    color: lightgray;
+}
+
+i {
+    margin-left: -20px;
 }

@@ -1,0 +1,30 @@
+<div class="reg_class">
+    <form id="reg_form" name="reg_form" action="" onsubmit="return validateRegistration();" method="POST">
+
+        <div class="formularz">
+            Nazwa użytkownika: <br>
+            <input type="text" id="reg_login" name="reg_login">
+        </div>
+        <div class="formularz">
+            e-mail: <br>
+            <input type="text" id="reg_email" name="reg_email">
+        </div>
+        <div class="formularz">
+            Hasło: <br>
+            <input type="password" id="reg_password" name="reg_password" />
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+        </div>
+        <div class="formularz">
+            Powtórz hasło: <br>
+            <input type="password" id="reg_password2" name="reg_password2" />
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
+        </div>
+        <!--Div do alertów dot. złego hasła-->
+        <div id="reg_alert" class="formularz" style="color: red"></div>
+        <div class="formularz">
+            <input type="submit" name="Zarejestruj" value="Zarejestruj">
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="registration_validation.js"></script>
